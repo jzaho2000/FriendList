@@ -1,0 +1,30 @@
+<! DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Friendlist Jyrki Aho</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div>
+		<h2>My friends</h2>
+	
+		<ul>
+			<li th:each="fr: ${friends}">
+				<span th:text="${fr.name}"></span>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<h2>Add new friend to list</h2>
+		<form th:action="@{/index}"  method="GET" >
+			<p><label>Name:</label>
+			<input type="text" name="friend" /></p>
+			<p><input type="submit" value="Submit" /></p>
+		</form>
+	</div>
+	
+
+	
+	
+</body>
+</html>
